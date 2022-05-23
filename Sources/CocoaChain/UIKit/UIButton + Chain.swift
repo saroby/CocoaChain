@@ -68,4 +68,16 @@ public extension Chain where T: UIButton {
         return self
     }
     
+    @discardableResult
+    func sizeToFit() -> Self {
+        base.sizeToFit()
+        return self
+    }
+    
+    @discardableResult
+    func sizeThatFits(_ size: CGSize) -> Self {
+        base.sizeThatFits(size)
+        return self
+    }
+    
 }
