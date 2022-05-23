@@ -136,6 +136,19 @@ public extension Chain where T: UIView {
         base.removeGestureRecognizer(gestureRecognizer)
         return self
     }
+    
+    @discardableResult
+    func isUserInteractionEnabled(_ isUserInteractionEnabled: Bool) -> Self {
+        base.isUserInteractionEnabled = isUserInteractionEnabled
+        return self
+    }
+    
+    @discardableResult
+    func addConstraints(_ constraints: [NSLayoutConstraint]) -> Self {
+        base.addConstraints(constraints)
+        return self
+    }
+    
 }
 
 // SnapKit
