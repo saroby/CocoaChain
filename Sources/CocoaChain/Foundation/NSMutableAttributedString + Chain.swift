@@ -7,7 +7,7 @@ public extension Chain where T: NSMutableAttributedString {
         _ name: NSAttributedString.Key,
         value: Any,
         range: NSRange
-    ) -> Chain {
+    ) -> Self {
         base.addAttribute(name, value: value, range: range)
         return self
     }
@@ -16,7 +16,7 @@ public extension Chain where T: NSMutableAttributedString {
     func addAttributes(
         _ attrs: [NSAttributedString.Key : Any],
         range: NSRange
-    ) -> Chain {
+    ) -> Self {
         base.addAttributes(attrs, range: range)
         return self
     }
@@ -25,7 +25,7 @@ public extension Chain where T: NSMutableAttributedString {
     func removeAttribute(
         _ name: NSAttributedString.Key,
         range: NSRange
-    ) -> Chain {
+    ) -> Self {
         base.removeAttribute(name, range: range)
         return self
     }
