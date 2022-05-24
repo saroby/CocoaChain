@@ -11,6 +11,7 @@ public struct Chain<T> {
         return base
     }
     
+    @discardableResult
     public func then(_ block: (T) throws -> Void) rethrows -> Self {
         try block(base)
         return self
