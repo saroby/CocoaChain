@@ -168,3 +168,21 @@ public extension Chain where T: UIView {
     }
     
 }
+
+// (beta) UIStackView
+
+public extension Chain where T: UIView {
+    
+    @discardableResult
+    func addArrangedSuperview(_ view: UIStackView) -> Self {
+        view.addArrangedSubview(base)
+        return self
+    }
+    
+    @discardableResult
+    func removeArrangedSuperview(_ view: UIStackView) -> Self {
+        view.removeArrangedSubview(base)
+        return self
+    }
+    
+}
