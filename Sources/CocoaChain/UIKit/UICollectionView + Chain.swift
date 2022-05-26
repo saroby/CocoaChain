@@ -26,4 +26,22 @@ public extension Chain where T: UICollectionView {
         return self
     }
     
+    @discardableResult
+    func delegate(_ delegate: UICollectionViewDelegate?) -> Self {
+        base.delegate = delegate
+        return self
+    }
+    
+    @discardableResult
+    func dataSource(_ dataSource: UICollectionViewDataSource?) -> Self {
+        base.dataSource = dataSource
+        return self
+    }
+    
+    @discardableResult
+    func reloadData() -> Self {
+        base.reloadData()
+        return self
+    }
+    
 }

@@ -34,4 +34,25 @@ public extension Chain where T: UIControl {
         return self
     }
     
+    @available(iOS 14.0, *)
+    @discardableResult
+    func addAction(_ action: UIAction, for controlEvents: UIControl.Event) -> Self {
+        base.addAction(action, for: controlEvents)
+        return self
+    }
+    
+    @available(iOS 14.0, *)
+    @discardableResult
+    func removeAction(_ action: UIAction, for controlEvents: UIControl.Event) -> Self {
+        base.removeAction(action, for: controlEvents)
+        return self
+    }
+    
+    @available(iOS 14.0, *)
+    @discardableResult
+    func removeAction(identifiedBy actionIdentifier: UIAction.Identifier, for controlEvents: UIControl.Event) -> Self {
+        base.removeAction(identifiedBy: actionIdentifier, for: controlEvents)
+        return self
+    }
+    
 }
