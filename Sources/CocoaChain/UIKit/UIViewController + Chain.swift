@@ -9,6 +9,12 @@ public extension Chain where T: UIViewController {
     }
     
     @discardableResult
+    func tabBarItem(_ tabBarItem: UITabBarItem?) -> Self {
+        base.tabBarItem = tabBarItem
+        return self
+    }
+    
+    @discardableResult
     func setEditing(_ editing: Bool, animated: Bool) -> Self {
         base.setEditing(editing, animated: animated)
         return self

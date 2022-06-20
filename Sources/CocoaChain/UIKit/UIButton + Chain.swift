@@ -58,9 +58,9 @@ public extension Chain where T: UIButton {
     @discardableResult
     func contentEdgeInsets(
         _ contentEdgeInsets: UIEdgeInsets) -> Self {
-        base.contentEdgeInsets = contentEdgeInsets
-        return self
-    }
+            base.contentEdgeInsets = contentEdgeInsets
+            return self
+        }
     
     @discardableResult
     func titleLabelFont(_ font: UIFont) -> Self {
@@ -77,6 +77,28 @@ public extension Chain where T: UIButton {
     @discardableResult
     func sizeThatFits(_ size: CGSize) -> Self {
         base.sizeThatFits(size)
+        return self
+    }
+    
+}
+
+// (beta) Util
+
+public extension Chain where T: UIButton {
+    
+    @discardableResult
+    func setBackgroundColor(
+        _ color: UIColor,
+        for state: UIControl.State
+    ) -> Self {
+        UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
+        guard let context = UIGraphicsGetCurrentContext() else { return self }
+        context.setFillColor(color.cgColor)
+        context.fill(CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0))
+        let backgroundImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        base.setBackgroundImage(backgroundImage, for: state)
         return self
     }
     
