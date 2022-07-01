@@ -102,6 +102,20 @@ public extension Chain where T: UIView {
     }
     
     @discardableResult
+    func insertSuperview(_ superview: UIView, belowSubview: UIView) -> Self {
+        base.removeFromSuperview()
+        superview.insertSubview(base, belowSubview: belowSubview)
+        return self
+    }
+    
+    @discardableResult
+    func insertSuperview(_ superview: UIView, aboveSubview: UIView) -> Self {
+        base.removeFromSuperview()
+        superview.insertSubview(base, aboveSubview: aboveSubview)
+        return self
+    }
+    
+    @discardableResult
     func removeFromSuperview() -> Self {
         base.removeFromSuperview()
         return self
