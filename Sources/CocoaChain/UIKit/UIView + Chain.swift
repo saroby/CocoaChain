@@ -41,7 +41,6 @@ public extension Chain where T: UIView {
         return self
     }
     
-    @available(iOS 15.0, *)
     @discardableResult
     func semanticContentAttribute(_ semanticContentAttribute: UISemanticContentAttribute) -> Self {
         base.semanticContentAttribute = semanticContentAttribute
