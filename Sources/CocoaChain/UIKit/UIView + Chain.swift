@@ -57,6 +57,12 @@ public extension Chain where T: UIView {
     }
     
     @discardableResult
+    func size(_ size: CGFloat) -> Self {
+        base.frame.size = .init(width: size, height: size)
+        return self
+    }
+    
+    @discardableResult
     func frame(_ frame: CGRect) -> Self {
         base.frame = frame
         return self
