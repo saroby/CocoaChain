@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "flexlayout",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/layoutBox/FlexLayout",
+      "state" : {
+        "revision" : "2db7eaafbc9c988ca9ea4a236a41f67c07f7d1b6",
+        "version" : "1.3.24"
+      }
+    },
+    {
       "identity" : "snapkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SnapKit/SnapKit",

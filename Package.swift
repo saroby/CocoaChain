@@ -11,15 +11,19 @@ let package = Package(
     products: [
         .library(
             name: "CocoaChain",
-            targets: ["CocoaChain"]),
+            targets: ["CocoaChain"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/SnapKit/SnapKit", branch: "main"),
+        .package(url: "https://github.com/layoutBox/FlexLayout", from: .init(1, 3, 24)),
     ],
     targets: [
         .target(
             name: "CocoaChain",
-            dependencies: ["SnapKit"]),
+            dependencies: ["SnapKit", "FlexLayout"],
+            cSettings: [.define("FLEXLAYOUT_SWIFT_PACKAGE")]
+        ),
     ],
     swiftLanguageVersions: [.v5]
 )

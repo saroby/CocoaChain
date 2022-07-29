@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import FlexLayout
 
 public extension Chain where T: UIView {
     
@@ -604,6 +605,18 @@ public extension Chain where T: UIView {
     @discardableResult
     func removeArrangedSuperview(_ view: UIStackView) -> Self {
         view.removeArrangedSubview(base)
+        return self
+    }
+    
+}
+
+// (beta) FlexLayout
+
+public extension Chain where T: UIView {
+    
+    @discardableResult
+    func flex(_ closure: (_ flex: Flex) -> Void) -> Self {
+        closure(base.flex)
         return self
     }
     
