@@ -110,14 +110,32 @@ public extension Chain where T: UIButton {
         _ color: UIColor,
         for state: UIControl.State
     ) -> Self {
-        UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
-        guard let context = UIGraphicsGetCurrentContext() else { return self }
-        context.setFillColor(color.cgColor)
-        context.fill(CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0))
-        let backgroundImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+        let createUIImage = { (color: CGColor) -> UIImage? in
+            UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
+            guard let context = UIGraphicsGetCurrentContext() else { return nil }
+            context.setFillColor(color)
+            context.fill(CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0))
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            return image
+        }
         
-        base.setBackgroundImage(backgroundImage, for: state)
+        if #available(iOS 13.0, *) {
+            let lightColor = color.resolvedColor(with: .init(userInterfaceStyle: .light))
+            let darkColor = color.resolvedColor(with: .init(userInterfaceStyle: .dark))
+            
+            if let lightImage = createUIImage(lightColor.cgColor) {
+                if let darkImage = createUIImage(darkColor.cgColor) {
+                    lightImage.imageAsset?.register(darkImage, with: .init(userInterfaceStyle: .dark))
+                }
+                
+                base.setBackgroundImage(lightImage, for: state)
+            }
+        } else if let image = createUIImage(color.cgColor) {
+            base.setBackgroundImage(image, for: state)
+        }
+        
         return self
     }
     
