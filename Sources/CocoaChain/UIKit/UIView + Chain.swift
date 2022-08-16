@@ -527,17 +527,20 @@ public extension Chain where T: UIView {
 
 public extension Chain where T: UIView {
     
+    @available(iOS 15.0, *)
     @discardableResult
     func minimumContentSizeCategory(minimumContentSizeCategory: UIContentSizeCategory?) -> Self {
         base.minimumContentSizeCategory = minimumContentSizeCategory
         return self
     }
     
+    @available(iOS 15.0, *)
     @discardableResult
     func maximumContentSizeCategory(maximumContentSizeCategory: UIContentSizeCategory?) -> Self {
         base.maximumContentSizeCategory = maximumContentSizeCategory
         return self
     }
+    
 }
 
 // (beta) Superview
