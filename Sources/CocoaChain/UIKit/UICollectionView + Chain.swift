@@ -102,4 +102,61 @@ public extension Chain where T: UICollectionView {
         return self
     }
     
+    /// These methods allow dynamic modification of the current set of items in the collection view
+    @discardableResult
+    func insertSections(_ sections: IndexSet) -> Self {
+        base.insertSections(sections)
+        return self
+    }
+    
+    @discardableResult
+    func deleteSections(_ sections: IndexSet) -> Self {
+        base.deleteSections(sections)
+        return self
+    }
+    
+    @discardableResult
+    func moveSection(_ section: Int, toSection newSection: Int) -> Self {
+        base.moveSection(section, toSection: newSection)
+        return self
+    }
+    
+    @discardableResult
+    func reloadSections(_ sections: IndexSet) -> Self {
+        base.reloadSections(sections)
+        return self
+    }
+    
+    @discardableResult
+    func insertItems(at indexPaths: [IndexPath]) -> Self {
+        base.insertItems(at: indexPaths)
+        return self
+    }
+    
+    @discardableResult
+    func deleteItems(at indexPaths: [IndexPath]) -> Self {
+        base.deleteItems(at: indexPaths)
+        return self
+    }
+    
+    @discardableResult
+    func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) -> Self {
+        base.moveItem(at: indexPath, to: newIndexPath)
+        return self
+    }
+    
+    @discardableResult
+    func reloadItems(at indexPaths: [IndexPath]) -> Self {
+        base.reloadItems(at: indexPaths)
+        return self
+    }
+    
+    /// Reconfigures any existing cells for the items. Reconfiguring is more efficient than reloading an item, as it does not replace the
+    /// existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell for the item.
+    @discardableResult
+    @available(iOS 15.0, *)
+    func reconfigureItems(at indexPaths: [IndexPath]) -> Self {
+        base.reconfigureItems(at: indexPaths)
+        return self
+    }
 }
