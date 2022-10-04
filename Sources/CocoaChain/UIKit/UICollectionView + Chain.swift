@@ -3,6 +3,26 @@ import UIKit
 public extension Chain where T: UICollectionView {
     
     @discardableResult
+    func reorderingCadence(_ reorderingCadence: UICollectionView.ReorderingCadence) -> Self {
+        base.reorderingCadence = reorderingCadence
+        return self
+    }
+    
+    @available(iOS 16.0, *)
+    @discardableResult
+    func selfSizingInvalidation(_ selfSizingInvalidation: UICollectionView.SelfSizingInvalidation) -> Self {
+        base.selfSizingInvalidation = selfSizingInvalidation
+        return self
+    }
+    
+    /// will be automatically resized to track the size of the collection view and placed behind all cells and supplementary views.
+    @discardableResult
+    func backgroundView(_ backgroundView: UIView?) -> Self {
+        base.backgroundView = backgroundView
+        return self
+    }
+    
+    @discardableResult
     func register(_ cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String) -> Self {
         base.register(cellClass, forCellWithReuseIdentifier: identifier)
         return self
@@ -26,6 +46,20 @@ public extension Chain where T: UICollectionView {
         return self
     }
     
+    /// default is YES
+    @discardableResult
+    func allowsSelection(_ allowsSelection: Bool) -> Self {
+        base.allowsSelection = allowsSelection
+        return self
+    }
+    
+    /// default is NO
+    @discardableResult
+    func allowsMultipleSelection(_ allowsMultipleSelection: Bool) -> Self {
+        base.allowsMultipleSelection = allowsMultipleSelection
+        return self
+    }
+    
     @discardableResult
     func delegate(_ delegate: UICollectionViewDelegate?) -> Self {
         base.delegate = delegate
@@ -41,18 +75,6 @@ public extension Chain where T: UICollectionView {
     @discardableResult
     func reloadData() -> Self {
         base.reloadData()
-        return self
-    }
-    
-    @discardableResult
-    func allowsSelection(_ allowsSelection: Bool) -> Self {
-        base.allowsSelection = allowsSelection
-        return self
-    }
-    
-    @discardableResult
-    func allowsMultipleSelection(_ allowsMultipleSelection: Bool) -> Self {
-        base.allowsMultipleSelection = allowsMultipleSelection
         return self
     }
     
