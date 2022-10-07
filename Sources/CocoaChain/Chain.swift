@@ -1,7 +1,7 @@
 import Foundation
 
 public struct Chain<T> {
-    var base: T
+    public private(set) var base: T
     
     public init(_ base: T) {
         self.base = base
