@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         .layer { layer in /// closure access for a property layer
             layer.cornerRadius = 4.0
             layer.borderWidth = 0.5
-            layer.borderColor = .black
+            layer.borderColor = .black.cgColor
             layer.masksToBounds = true
         }
         .endChain
