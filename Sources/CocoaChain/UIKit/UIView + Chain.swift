@@ -272,6 +272,11 @@ public extension Chain where T: UIView {
         return self
     }
     
+    @discardableResult
+    func subviews(_ closure: (_ subviews: [UIView]) -> Void) -> Self {
+        closure(base.subviews)
+        return self
+    }
 }
 
 public extension Chain where T: UIView {
