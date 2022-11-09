@@ -27,20 +27,32 @@ import CocoaChain
 
 class ViewController: UIViewController {
 
-    let label = UILabel().chain
+    let label = UILabel()
+        .chain
         .text("Hello World!")
         .font(.systemFont(ofSize: 28.0))
         .textColor(.green)
         .numberOfLines(1)
+        .layer { layer in /// closure access for a property layer
+            layer.cornerRadius = 4.0
+            layer.borderWidth = 0.5
+            layer.borderColor = .black
+            layer.masksToBounds = true
+        }
         .endChain
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.label.chain
-            .addSuperview(view)
-            .makeConstraints { make in
+            .addSuperview(view) /// utility for a function addSubview
+            .makeConstraints { make in /// SnapKit wrapping
                 make.center.equalToSuperview()
+            }
+            .flex { flex in /// FlexLayout wrapping
+                flex.define { flex in
+                    flex.addItem()
+                }
             }
             .then { label in
                 label.sizeToFit()
