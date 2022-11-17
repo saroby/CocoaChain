@@ -33,6 +33,11 @@ class ViewController: UIViewController {
         .font(.systemFont(ofSize: 28.0))
         .textColor(.green)
         .numberOfLines(1)
+        .layer(cornerRadius: 4.0)
+        .layer(borderWidth: 0.5)
+        .layer(borderColor: .black) /// UIColor
+        .layer(borderColor: .black.cgColor) /// CGColor
+        .layer(masksToBounds: true)
         .layer { layer in /// closure access for a property layer
             layer.cornerRadius = 4.0
             layer.borderWidth = 0.5
@@ -40,10 +45,10 @@ class ViewController: UIViewController {
             layer.masksToBounds = true
         }
         .endChain
-
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.label.chain
             .addSuperview(view) /// utility for a function addSubview
             .makeConstraints { make in /// SnapKit wrapping

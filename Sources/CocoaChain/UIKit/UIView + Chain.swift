@@ -629,3 +629,100 @@ public extension Chain where T: UIView {
     }
     
 }
+
+public extension Chain where T: UIView {
+    
+    @discardableResult
+    func frame(x: CGFloat?, y: CGFloat?, width: CGFloat?, height: CGFloat?) -> Self {
+        let frame = CGRect(
+            x: x ?? base.frame.origin.x,
+            y: y ?? base.frame.origin.y,
+            width: width ?? base.frame.width,
+            height: height ?? base.frame.height
+        )
+        
+        base.frame = frame
+        return self
+    }
+    
+    @discardableResult
+    func bounds(x: CGFloat?, y: CGFloat?, width: CGFloat?, height: CGFloat?) -> Self {
+        let bounds = CGRect(
+            x: x ?? base.bounds.origin.x,
+            y: y ?? base.bounds.origin.y,
+            width: width ?? base.bounds.width,
+            height: height ?? base.bounds.height
+        )
+        
+        base.bounds = bounds
+        return self
+    }
+    
+    @discardableResult
+    func layer(cornerRadius: CGFloat) -> Self {
+        base.layer.cornerRadius = cornerRadius
+        return self
+    }
+    
+    @available(iOS 13.0, *)
+    @discardableResult
+    func layer(cornerCurve: CALayerCornerCurve) -> Self {
+        base.layer.cornerCurve = cornerCurve
+        return self
+    }
+    
+    @discardableResult
+    func layer(masksToBounds: Bool) -> Self {
+        base.layer.masksToBounds = masksToBounds
+        return self
+    }
+    
+    @discardableResult
+    func layer(borderWidth: CGFloat) -> Self {
+        base.layer.borderWidth = borderWidth
+        return self
+    }
+    
+    @discardableResult
+    func layer(borderColor: CGColor?) -> Self {
+        base.layer.borderColor = borderColor
+        return self
+    }
+    
+    @discardableResult
+    func layer(borderColor: UIColor?) -> Self {
+        base.layer.borderColor = borderColor?.cgColor
+        return self
+    }
+    
+    @discardableResult
+    func layer(shadowColor: UIColor?) -> Self {
+        base.layer.shadowColor = shadowColor?.cgColor
+        return self
+    }
+    
+    @discardableResult
+    func layer(shadowOffset: CGSize) -> Self {
+        base.layer.shadowOffset = shadowOffset
+        return self
+    }
+    
+    @discardableResult
+    func layer(shadowRadius: CGFloat) -> Self {
+        base.layer.shadowRadius = shadowRadius
+        return self
+    }
+    
+    @discardableResult
+    func layer(shadowOpacity: Float) -> Self {
+        base.layer.shadowOpacity = shadowOpacity
+        return self
+    }
+    
+    @discardableResult
+    func layer(shadowPath: CGPath) -> Self {
+        base.layer.shadowPath = shadowPath
+        return self
+    }
+    
+}
