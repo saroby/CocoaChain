@@ -640,6 +640,29 @@ public extension Chain where T: UIView {
     }
     
     @discardableResult
+    func frame(origin: CGPoint) -> Self {
+        let frame = CGRect(
+            origin: origin,
+            size: base.frame.size
+        )
+        
+        base.frame = frame
+        return self
+    }
+    
+    
+    @discardableResult
+    func frame(size: CGSize) -> Self {
+        let frame = CGRect(
+            origin: base.frame.origin,
+            size: size
+        )
+        
+        base.frame = frame
+        return self
+    }
+    
+    @discardableResult
     func bounds(x: CGFloat?, y: CGFloat?, width: CGFloat?, height: CGFloat?) -> Self {
         let bounds = CGRect(
             x: x ?? base.bounds.origin.x,

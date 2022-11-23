@@ -98,4 +98,10 @@ public extension Chain where T: UIView {
         return self
     }
     
+    @discardableResult
+    func layer(mask: CALayer?) -> Self {
+        base.layer.mask = mask
+        return self
+    }
+
 }
