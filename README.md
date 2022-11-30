@@ -49,7 +49,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.label.chain
+        self.label
+            .chain
             .addSuperview(view) /// utility for a function addSubview
             .makeConstraints { make in /// SnapKit wrapping
                 make.center.equalToSuperview()
