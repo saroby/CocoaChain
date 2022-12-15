@@ -64,6 +64,7 @@ public extension Chain where T: UILabel {
     /// Specifies the line break strategies that may be used for laying out the text in this label.
     /// If this property is not set, the default value is NSLineBreakStrategyStandard.
     /// If the label contains an attributed text with paragraph style(s) that specify a set of line break strategies, the set of strategies in the paragraph style(s) will be used instead of the set of strategies defined by this property.
+    @available(iOS 14.0, *)
     @discardableResult
     func lineBreakStrategy(_ lineBreakStrategy: NSParagraphStyle.LineBreakStrategy) -> Self {
         base.lineBreakStrategy = lineBreakStrategy
