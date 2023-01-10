@@ -1,6 +1,7 @@
 import UIKit
 import SnapKit
 import FlexLayout
+import SwiftUI
 
 public extension Chain where T: UIView {
     
@@ -672,6 +673,34 @@ public extension Chain where T: UIView {
         )
         
         base.bounds = bounds
+        return self
+    }
+    
+}
+
+// (beta) SwiftUI style
+
+public extension Chain where T: UIView {
+    
+    @discardableResult
+    func border(_ color: UIColor, width: CGFloat = 1) -> Self {
+        base.layer.borderColor = color.cgColor
+        base.layer.borderWidth = width
+        return self
+    }
+    
+    @available(iOS 13.0, *)
+    @discardableResult
+    func layoutMargins(_ insets: EdgeInsets) -> Self {
+        switch base.effectiveUserInterfaceLayoutDirection {
+        case .leftToRight:
+            base.layoutMargins = .init(top: insets.top, left: insets.leading, bottom: insets.bottom, right: insets.trailing)
+        case .rightToLeft:
+            base.layoutMargins = .init(top: insets.top, left: insets.trailing, bottom: insets.bottom, right: insets.leading)
+        @unknown default:
+            break
+        }
+        
         return self
     }
     

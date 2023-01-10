@@ -50,4 +50,27 @@ public extension Chain where T: UIViewController {
         return self
     }
     
+    @discardableResult
+    func addChild(_ childContrlller: UIViewController) -> Self {
+        base.addChild(childContrlller)
+        return self
+    }
+    
+    @discardableResult
+    func addParent(_ parentContrlller: UIViewController) -> Self {
+        parentContrlller.addChild(base)
+        return self
+    }
+    
+    @discardableResult
+    func isEditing(_ isEditing: Bool) -> Self {
+        base.isEditing = isEditing
+        return self
+    }
+    
+    @discardableResult
+    func toolbarItems(_ toolbarItems: [UIBarButtonItem]?) -> Self {
+        base.toolbarItems = toolbarItems
+        return self
+    }
 }
