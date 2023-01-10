@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/SnapKit/SnapKit", branch: "main"),
-        .package(url: "https://github.com/layoutBox/FlexLayout", from: .init(1, 3, 24)),
+        .package(url: "https://github.com/layoutBox/FlexLayout", branch: "master"),
     ],
     targets: [
         .target(
