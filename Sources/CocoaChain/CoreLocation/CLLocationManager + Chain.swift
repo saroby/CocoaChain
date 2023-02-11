@@ -1,4 +1,4 @@
-import MapKit
+import CoreLocation
 
 public extension Chain where T: CLLocationManager {
     
