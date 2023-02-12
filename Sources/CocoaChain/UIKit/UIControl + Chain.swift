@@ -81,6 +81,13 @@ public extension Chain where T: UIControl {
         return self
     }
     
+    @available(iOS 14.0, *)
+    @discardableResult
+    func addAction(for controlEvents: UIControl.Event, handler: @escaping UIActionHandler) -> Self {
+        base.addAction(UIAction(handler: handler), for: controlEvents)
+        return self
+    }
+    
     /// Removes the action from the set of passed control events.
     @available(iOS 14.0, *)
     @discardableResult
