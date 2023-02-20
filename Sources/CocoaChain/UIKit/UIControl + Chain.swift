@@ -83,7 +83,7 @@ public extension Chain where T: UIControl {
     
     @available(iOS 14.0, *)
     @discardableResult
-    func addAction(for controlEvents: UIControl.Event, handler: @escaping UIActionHandler) -> Self {
+    func addAction(for controlEvents: UIControl.Event = .touchUpInside, handler: @escaping UIActionHandler) -> Self {
         base.addAction(UIAction(handler: handler), for: controlEvents)
         return self
     }
