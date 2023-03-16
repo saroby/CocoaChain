@@ -1,5 +1,4 @@
 import UIKit
-import SnapKit
 
 public extension Chain where T: UIControl {
     

@@ -11,7 +11,11 @@ let package = Package(
     products: [
         .library(
             name: "CocoaChain",
-            targets: ["CocoaChain"]
+            targets: [
+                "CocoaChain",
+                "CoCoaChain.SnapKit",
+                "CoCoaChain.FlexLayout",
+            ]
         ),
     ],
     dependencies: [
@@ -20,8 +24,15 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "CocoaChain",
-            dependencies: ["SnapKit", "FlexLayout"],
+            name: "CocoaChain"
+        ),
+        .target(
+            name: "CoCoaChain.SnapKit",
+            dependencies: ["CocoaChain", "SnapKit"]
+        ),
+        .target(
+            name: "CoCoaChain.FlexLayout",
+            dependencies: ["CocoaChain", "FlexLayout"],
             cSettings: [.define("FLEXLAYOUT_SWIFT_PACKAGE")]
         ),
     ],

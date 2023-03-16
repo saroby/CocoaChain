@@ -1,6 +1,4 @@
 import UIKit
-import SnapKit
-import FlexLayout
 import SwiftUI
 
 public extension Chain where T: UIView {
@@ -577,24 +575,6 @@ public extension Chain where T: UIView {
     
 }
 
-// SnapKit
-
-public extension Chain where T: UIView {
-    
-    @discardableResult
-    func makeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) -> Self {
-        base.snp.makeConstraints(closure)
-        return self
-    }
-    
-    @discardableResult
-    func remakeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) -> Self {
-        base.snp.remakeConstraints(closure)
-        return self
-    }
-    
-}
-
 // (beta) UIStackView
 
 public extension Chain where T: UIView {
@@ -608,18 +588,6 @@ public extension Chain where T: UIView {
     @discardableResult
     func removeArrangedSuperview(_ view: UIStackView) -> Self {
         view.removeArrangedSubview(base)
-        return self
-    }
-    
-}
-
-// (beta) FlexLayout
-
-public extension Chain where T: UIView {
-    
-    @discardableResult
-    func flex(_ closure: (_ flex: Flex) -> Void) -> Self {
-        closure(base.flex)
         return self
     }
     
