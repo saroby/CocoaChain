@@ -160,4 +160,16 @@ public extension Chain where T: UICollectionView {
         return self
     }
     
+    @discardableResult
+    func dragDelegate(_ dragDelegate: UICollectionViewDragDelegate?) -> Self {
+        base.dragDelegate = dragDelegate
+        return self
+    }
+    
+    @discardableResult
+    func dropDelegate(_ dropDelegate: UICollectionViewDropDelegate?) -> Self {
+        base.dropDelegate = dropDelegate
+        return self
+    }
+
 }
