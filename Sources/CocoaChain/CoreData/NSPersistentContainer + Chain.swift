@@ -13,4 +13,11 @@ public extension Chain where T: NSPersistentContainer {
         base.persistentStoreDescriptions = persistentStoreDescriptions
         return self
     }
+    
+    @discardableResult
+    func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) -> Self {
+        base.performBackgroundTask(block)
+        return self
+    }
+    
 }
