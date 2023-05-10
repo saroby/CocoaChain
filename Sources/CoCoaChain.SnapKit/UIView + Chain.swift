@@ -1,7 +1,8 @@
+#if canImport(SnapKit)
+
 import CocoaChain
 import UIKit
 import SnapKit
-// SnapKit
 
 public extension Chain where T: UIView {
     
@@ -18,3 +19,5 @@ public extension Chain where T: UIView {
     }
     
 }
+
+#endif

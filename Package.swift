@@ -18,21 +18,18 @@ let package = Package(
             ]
         ),
     ],
-    dependencies: [
-        .package(url: "https://github.com/SnapKit/SnapKit", branch: "main"),
-        .package(url: "https://github.com/layoutBox/FlexLayout", branch: "master"),
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "CocoaChain"
         ),
         .target(
             name: "CoCoaChain.SnapKit",
-            dependencies: ["CocoaChain", "SnapKit"]
+            dependencies: ["CocoaChain"]
         ),
         .target(
             name: "CoCoaChain.FlexLayout",
-            dependencies: ["CocoaChain", "FlexLayout"],
+            dependencies: ["CocoaChain"],
             cSettings: [.define("FLEXLAYOUT_SWIFT_PACKAGE")]
         ),
     ],

@@ -1,3 +1,5 @@
+#if canImport(FlexLayout)
+
 import CocoaChain
 import UIKit
 import FlexLayout
@@ -11,3 +13,5 @@ public extension Chain where T: UIView {
     }
     
 }
+
+#endif
