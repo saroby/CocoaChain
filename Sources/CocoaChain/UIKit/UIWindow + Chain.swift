@@ -14,14 +14,7 @@ public extension Chain where T: UIWindow {
         base.canResizeToFitContent = canResizeToFitContent
         return self
     }
-    
-    
-    @discardableResult
-    func screen(_ screen: UIScreen) -> Self {
-        base.screen = screen
-        return self
-    }
-    
+        
     @discardableResult
     func windowLevel(_ windowLevel: UIWindow.Level) -> Self {
         base.windowLevel = windowLevel

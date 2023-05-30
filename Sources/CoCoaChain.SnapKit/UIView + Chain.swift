@@ -1,7 +1,6 @@
 import CocoaChain
 import UIKit
 import SnapKit
-// SnapKit
 
 public extension Chain where T: UIView {
     
