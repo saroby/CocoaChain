@@ -32,8 +32,7 @@ let package = Package(
         ),
         .target(
             name: "CoCoaChain.FlexLayout",
-            dependencies: ["CocoaChain", "FlexLayout"],
-            cSettings: [.define("FLEXLAYOUT_SWIFT_PACKAGE")]
+            dependencies: ["CocoaChain", "FlexLayout"]
         ),
     ],
     swiftLanguageVersions: [.v5]
