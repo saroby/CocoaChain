@@ -21,6 +21,12 @@ public extension Chain where T: DateFormatter {
     }
     
     @discardableResult
+    func timeStyle(_ timeStyle: DateFormatter.Style) -> Self {
+        base.timeStyle = timeStyle
+        return self
+    }
+    
+    @discardableResult
     func timeZone(_ timeZone: TimeZone?) -> Self {
         base.timeZone = timeZone
         return self
