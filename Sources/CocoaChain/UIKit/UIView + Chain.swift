@@ -643,7 +643,15 @@ public extension Chain where T: UIView {
         base.bounds = bounds
         return self
     }
+}
+
+public extension Chain where T: UIView {
     
+    @discardableResult
+    func restorationIdentifier(_ restorationIdentifier: String?) -> Self {
+        base.restorationIdentifier = restorationIdentifier
+        return self
+    }
 }
 
 // (beta) SwiftUI style
