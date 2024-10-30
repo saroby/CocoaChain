@@ -2,7 +2,6 @@ import UIKit
 
 public extension Chain where T: UIWindow {
     
-    @available(iOS 13.0, *)
     @discardableResult
     func windowScene(_ windowScene: UIWindowScene?) -> Self {
         base.windowScene = windowScene

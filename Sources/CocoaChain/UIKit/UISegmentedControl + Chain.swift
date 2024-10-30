@@ -3,7 +3,6 @@ import UIKit
 public extension Chain where T: UISegmentedControl {
     
     /// Insert a segment with the given action at the given index. Segments will prefer images over titles when both are provided. When the segment is selected UIAction.actionHandler is called. If a segment already exists with the action's identifier that segment will either be updated (if the index is the same) or it will be removed (if different).
-    @available(iOS 14.0, *)
     @discardableResult
     func insertSegment(action: UIAction, at segment: Int, animated: Bool) -> Self {
         base.insertSegment(
@@ -15,7 +14,6 @@ public extension Chain where T: UISegmentedControl {
     }
     
     /// Reconfigures the given segment with this action. Segments will prefer images over titles when both are provided. When the segment is selected UIAction.actionHandler is called. UIAction.identifier must either match the action of the existing segment at this index, or be unique within all actions associated with the segmented control, or this method will assert.
-    @available(iOS 14.0, *)
     @discardableResult
     func setAction(_ action: UIAction, forSegmentAt segment: Int) -> Self {
         base.setAction(
@@ -135,7 +133,6 @@ public extension Chain where T: UISegmentedControl {
     
     
     // The color to use for highlighting the currently selected segment.
-    @available(iOS 13.0, *)
     @discardableResult
     func selectedSegmentTintColor(_ selectedSegmentTintColor: UIColor?) -> Self {
         base.selectedSegmentTintColor = selectedSegmentTintColor

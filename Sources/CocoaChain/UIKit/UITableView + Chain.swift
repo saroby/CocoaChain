@@ -20,7 +20,6 @@ public extension Chain where T: UITableView {
         return self
     }
     
-    @available(iOS 15.0, *)
     @discardableResult
     func isPrefetchingEnabled(_ isPrefetchingEnabled: Bool) -> Self {
         base.isPrefetchingEnabled = isPrefetchingEnabled
@@ -83,7 +82,6 @@ public extension Chain where T: UITableView {
     
     /// The height for filler rows added below the last row when there aren't enough rows to fill a plain style table view.
     /// Set 0 to disable filler rows entirely, use `UITableViewAutomaticDimension` for the default height.
-    @available(iOS 15.0, *)
     @discardableResult
     func fillerRowHeight(_ fillerRowHeight: CGFloat) -> Self {
         base.fillerRowHeight = fillerRowHeight
@@ -91,7 +89,6 @@ public extension Chain where T: UITableView {
     }
     
     /// Padding above each section header. The default value is `UITableViewAutomaticDimension`.
-    @available(iOS 15.0, *)
     @discardableResult
     func sectionHeaderTopPadding(_ sectionHeaderTopPadding: CGFloat) -> Self {
         base.sectionHeaderTopPadding = sectionHeaderTopPadding
@@ -205,7 +202,6 @@ public extension Chain where T: UITableView {
     
     /// Reconfigures any existing cells for the rows. Reconfiguring is more efficient than reloading a row, as it does not replace the
     /// existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell for the row.
-    @available(iOS 15.0, *)
     @discardableResult
     func reconfigureRows(at indexPaths: [IndexPath]) -> Self {
         base.reconfigureRows(at: indexPaths)
@@ -401,7 +397,6 @@ public extension Chain where T: UITableView {
     
     /// When enabled, the table view ensures that selection is automatically triggered when focus moves to a cell.
     /// Defaults to a system derived value based on platform and other properties of the table view.
-    @available(iOS 14.0, *)
     @discardableResult
     func selectionFollowsFocus(_ selectionFollowsFocus: Bool) -> Self {
         base.selectionFollowsFocus = selectionFollowsFocus
@@ -411,7 +406,6 @@ public extension Chain where T: UITableView {
     /// Determines if the table view allows its cells to become focused.
     /// When tableView:canFocusRowAtIndexPath: is implemented, its return value takes precedence over this method.
     /// Defaults to a system derived value based on platform and other properties of the table view.
-    @available(iOS 15.0, *)
     @discardableResult
     func allowsFocus(_ allowsFocus: Bool) -> Self {
         base.allowsFocus = allowsFocus
@@ -421,7 +415,6 @@ public extension Chain where T: UITableView {
     /// Determines if the table view allows its cells to become focused while editing.
     /// When tableView:canFocusRowAtIndexPath: is implemented, its return value takes precedence over this method.
     /// Defaults to a system derived value based on platform and other properties of the table view.
-    @available(iOS 15.0, *)
     @discardableResult
     func allowsFocusDuringEditing(_ allowsFocusDuringEditing: Bool) -> Self {
         base.allowsFocusDuringEditing = allowsFocusDuringEditing

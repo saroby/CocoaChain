@@ -52,7 +52,6 @@ public extension Chain where T: UINavigationItem {
     
     /// Controls how the back button sources its title.
     @discardableResult
-    @available(iOS 14.0, *)
     func backButtonDisplayMode(_ backButtonDisplayMode: UINavigationItem.BackButtonDisplayMode) -> Self {
         base.backButtonDisplayMode = backButtonDisplayMode
         return self
@@ -158,7 +157,6 @@ public extension Chain where T: UINavigationItem {
     
     
     ///  When set and this item is topmost, overrides the hosting navigation bar's standardAppearance. See UINavigationBar.standardAppearance for further details.
-    @available(iOS 13.0, *)
     @discardableResult
     func standardAppearance(_ standardAppearance: UINavigationBarAppearance?) -> Self {
         base.standardAppearance = standardAppearance
@@ -166,7 +164,6 @@ public extension Chain where T: UINavigationItem {
     }
     
     ///  When set and this item is topmost, overrides the hosting navigation bar's compactAppearance. See UINavigationBar.compactAppearance for further details.
-    @available(iOS 13.0, *)
     @discardableResult
     func compactAppearance(_ compactAppearance: UINavigationBarAppearance?) -> Self {
         base.compactAppearance = compactAppearance

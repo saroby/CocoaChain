@@ -158,7 +158,6 @@ public extension Chain where T: CALayer {
         return self
     }
     
-    @available(iOS 10.0, *)
     @discardableResult
     func contentsFormat(_ contentsFormat: CALayerContentsFormat) -> Self {
         base.contentsFormat = contentsFormat
@@ -261,7 +260,6 @@ public extension Chain where T: CALayer {
         return self
     }
     
-    @available(iOS 11.0, *)
     @discardableResult
     func maskedCorners(_ maskedCorners: CACornerMask) -> Self {
         base.maskedCorners = maskedCorners

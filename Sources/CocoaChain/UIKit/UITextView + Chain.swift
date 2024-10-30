@@ -120,7 +120,6 @@ public extension Chain where T: UITextView {
     
     
     /// When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the original font point sizes when the contents of the text view are copied to the pasteboard.  Apps that show a lot of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
-    @available(iOS 13.0, *)
     @discardableResult
     func usesStandardTextScaling(_ usesStandardTextScaling: Bool) -> Self {
         base.usesStandardTextScaling = usesStandardTextScaling

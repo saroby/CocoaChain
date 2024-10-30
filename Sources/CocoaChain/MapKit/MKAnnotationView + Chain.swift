@@ -8,7 +8,6 @@ public extension Chain where T: MKAnnotationView {
         return self
     }
     
-    @available(iOS 11.0, *)
     @discardableResult
     func prepareForDisplay() -> Self {
         base.prepareForDisplay()
@@ -135,14 +134,12 @@ public extension Chain where T: MKAnnotationView {
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func zPriority(_ zPriority: MKAnnotationViewZPriority) -> Self {
         base.zPriority = zPriority
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func selectedZPriority(_ selectedZPriority: MKAnnotationViewZPriority) -> Self {
         base.selectedZPriority = selectedZPriority

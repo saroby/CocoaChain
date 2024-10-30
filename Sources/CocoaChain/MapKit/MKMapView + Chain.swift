@@ -88,27 +88,23 @@ public extension Chain where T: MKMapView {
         return self
     }
     
-    @available(iOS 13.0, *)
     @discardableResult
     func cameraZoomRange(_ cameraZoomRange: MKMapView.CameraZoomRange) -> Self {
         base.cameraZoomRange = cameraZoomRange
         return self
     }
     
-    @available(iOS 13.0, *)
     @discardableResult
     func setCameraZoomRange(_ cameraZoomRange: MKMapView.CameraZoomRange?, animated: Bool) -> Self {
         base.setCameraZoomRange(cameraZoomRange, animated: animated)
         return self
     }
     
-    @available(iOS 13.0, *)
     func cameraBoundary(_ cameraBoundary: MKMapView.CameraBoundary?) -> Self {
         base.cameraBoundary = cameraBoundary
         return self
     }
     
-    @available(iOS 13.0, *)
     @discardableResult
     func setCameraBoundary(_ cameraBoundary: MKMapView.CameraBoundary?, animated: Bool) -> Self {
         base.setCameraBoundary(cameraBoundary, animated: animated)

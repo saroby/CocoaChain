@@ -154,7 +154,6 @@ public extension Chain where T: UICollectionView {
     /// Reconfigures any existing cells for the items. Reconfiguring is more efficient than reloading an item, as it does not replace the
     /// existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell for the item.
     @discardableResult
-    @available(iOS 15.0, *)
     func reconfigureItems(at indexPaths: [IndexPath]) -> Self {
         base.reconfigureItems(at: indexPaths)
         return self

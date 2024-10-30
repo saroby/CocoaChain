@@ -59,7 +59,6 @@ public extension Chain where T: UIControl {
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func sendAction(_ action: UIAction) -> Self {
         base.sendAction(action)
@@ -73,14 +72,12 @@ public extension Chain where T: UIControl {
     }
     
     /// Adds the UIAction to a given event. UIActions are uniqued based on their identifier, and subsequent actions with the same identifier replace previously added actions. You may add multiple UIActions for corresponding controlEvents, and you may add the same action to multiple controlEvents.
-    @available(iOS 14.0, *)
     @discardableResult
     func addAction(_ action: UIAction, for controlEvents: UIControl.Event) -> Self {
         base.addAction(action, for: controlEvents)
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func addAction(for controlEvents: UIControl.Event = .touchUpInside, handler: @escaping UIActionHandler) -> Self {
         base.addAction(UIAction(handler: handler), for: controlEvents)
@@ -88,7 +85,6 @@ public extension Chain where T: UIControl {
     }
     
     /// Removes the action from the set of passed control events.
-    @available(iOS 14.0, *)
     @discardableResult
     func removeAction(_ action: UIAction, for controlEvents: UIControl.Event) -> Self {
         base.removeAction(action, for: controlEvents)
@@ -96,7 +92,6 @@ public extension Chain where T: UIControl {
     }
     
     /// Removes the action with the provided identifier from the set of passed control events.
-    @available(iOS 14.0, *)
     @discardableResult
     func removeAction(identifiedBy actionIdentifier: UIAction.Identifier, for controlEvents: UIControl.Event) -> Self {
         base.removeAction(identifiedBy: actionIdentifier, for: controlEvents)

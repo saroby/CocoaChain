@@ -1,6 +1,5 @@
 import AuthenticationServices
 
-@available(iOS 13.0, *)
 public extension Chain where T: ASAuthorizationController {
     
     @discardableResult

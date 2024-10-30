@@ -26,14 +26,12 @@ public extension Chain where T: UISwitch {
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func title(_ title: String?) -> Self {
         base.title = title
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func preferredStyle(_ preferredStyle: UISwitch.Style) -> Self {
         base.preferredStyle = preferredStyle

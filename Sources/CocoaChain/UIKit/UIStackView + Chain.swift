@@ -44,7 +44,6 @@ public extension Chain where T: UIStackView {
         return self
     }
     
-    @available(iOS 11.0, *)
     @discardableResult
     func setCustomSpacing(_ spacing: CGFloat, after arrangedSubview: UIView) -> Self {
         base.setCustomSpacing(spacing, after: arrangedSubview)

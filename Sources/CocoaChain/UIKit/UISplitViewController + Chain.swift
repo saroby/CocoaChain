@@ -8,35 +8,30 @@ public extension Chain where T: UISplitViewController {
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func showsSecondaryOnlyButton(_ showsSecondaryOnlyButton: Bool) -> Self {
         base.showsSecondaryOnlyButton = showsSecondaryOnlyButton
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func preferredSplitBehavior(_ preferredSplitBehavior: UISplitViewController.SplitBehavior) -> Self {
         base.preferredSplitBehavior = preferredSplitBehavior
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func setViewController(_ vc: UIViewController?, for column: UISplitViewController.Column) -> Self {
         base.setViewController(vc, for: column)
         return self
     }
         
-    @available(iOS 14.0, *)
     @discardableResult
     func hide(_ column: UISplitViewController.Column) -> Self {
         base.hide(column)
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func show(_ column: UISplitViewController.Column) -> Self {
         base.show(column)
@@ -62,7 +57,6 @@ public extension Chain where T: UISplitViewController {
         return self
     }
     
-    @available(iOS 14.5, *)
     @discardableResult
     func displayModeButtonVisibility(_ displayModeButtonVisibility: UISplitViewController.DisplayModeButtonVisibility) -> Self {
         base.displayModeButtonVisibility = displayModeButtonVisibility
@@ -75,7 +69,6 @@ public extension Chain where T: UISplitViewController {
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func preferredPrimaryColumnWidth(_ preferredPrimaryColumnWidth: CGFloat) -> Self {
         base.preferredPrimaryColumnWidth = preferredPrimaryColumnWidth
@@ -88,14 +81,12 @@ public extension Chain where T: UISplitViewController {
         return self
     }
     
-    @available(iOS 8.0, *)
     @discardableResult
     func maximumPrimaryColumnWidth(_ maximumPrimaryColumnWidth: CGFloat) -> Self {
         base.maximumPrimaryColumnWidth = maximumPrimaryColumnWidth
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func preferredSupplementaryColumnWidthFraction(_ preferredSupplementaryColumnWidthFraction: CGFloat
     ) -> Self {
@@ -103,7 +94,6 @@ public extension Chain where T: UISplitViewController {
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func preferredSupplementaryColumnWidth(_ preferredSupplementaryColumnWidth: CGFloat
     ) -> Self {
@@ -111,7 +101,6 @@ public extension Chain where T: UISplitViewController {
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func minimumSupplementaryColumnWidth(_ minimumSupplementaryColumnWidth: CGFloat
     ) -> Self {
@@ -119,7 +108,7 @@ public extension Chain where T: UISplitViewController {
         return self
     }
     
-    @available(iOS 14.0, *)
+    
     @discardableResult
     func maximumSupplementaryColumnWidth(_ maximumSupplementaryColumnWidth: CGFloat
     ) -> Self {
@@ -145,7 +134,6 @@ public extension Chain where T: UISplitViewController {
         return self
     }
     
-    @available(iOS 13.0, *)
     @discardableResult
     func primaryBackgroundStyle(_ primaryBackgroundStyle: UISplitViewController.BackgroundStyle) -> Self {
         base.primaryBackgroundStyle = primaryBackgroundStyle

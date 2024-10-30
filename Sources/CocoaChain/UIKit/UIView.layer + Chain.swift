@@ -14,7 +14,6 @@ public extension Chain where T: UIView {
         return self
     }
     
-    @available(iOS 13.0, *)
     @discardableResult
     func layer(cornerCurve: CALayerCornerCurve) -> Self {
         base.layer.cornerCurve = cornerCurve

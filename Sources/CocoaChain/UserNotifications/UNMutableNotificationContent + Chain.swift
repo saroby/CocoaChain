@@ -74,7 +74,6 @@ public extension Chain where T: UNMutableNotificationContent {
     
     /// An identifier for the content of the notification used by the system to customize the scene to be activated when tapping on a notification.
     /// default nil
-    @available(iOS 13.0, *)
     @discardableResult
     func targetContentIdentifier(_ targetContentIdentifier: String?) -> Self {
         base.targetContentIdentifier = targetContentIdentifier
@@ -82,7 +81,6 @@ public extension Chain where T: UNMutableNotificationContent {
     }
     
     /// The interruption level determines the degree of interruption associated with the notification
-    @available(iOS 15.0, *)
     @discardableResult
     func interruptionLevel(_ interruptionLevel: UNNotificationInterruptionLevel) -> Self {
         base.interruptionLevel = interruptionLevel
@@ -90,7 +88,6 @@ public extension Chain where T: UNMutableNotificationContent {
     }
     
     /// Relevance score determines the sorting for the notification across app notifications. The expected range is between 0.0f and 1.0f.
-    @available(iOS 15.0, *)
     @discardableResult
     func relevanceScore(_ relevanceScore: Double) -> Self {
         base.relevanceScore = relevanceScore

@@ -15,21 +15,18 @@ public extension Chain where T: UIView {
         return self
     }
     
-    @available(iOS 14.0, *)
     @discardableResult
     func focusGroupIdentifier(_ focusGroupIdentifier: String?) -> Self {
         base.focusGroupIdentifier = focusGroupIdentifier
         return self
     }
     
-    @available(iOS 15.0, *)
     @discardableResult
     func focusGroupPriority(_ focusGroupPriority: UIFocusGroupPriority) -> Self {
         base.focusGroupPriority = focusGroupPriority
         return self
     }
     
-    @available(iOS 15.0, *)
     func focusEffect(_ focusEffect: UIFocusEffect?) -> Self {
         base.focusEffect = focusEffect
         return self
@@ -80,7 +77,6 @@ public extension Chain where T: UIView {
         return self
     }
     
-    @available(iOS 13.0, *)
     @discardableResult
     func transform3D(_ transform3D: CATransform3D) -> Self {
         base.transform3D = transform3D
@@ -514,7 +510,6 @@ public extension Chain where T: UIView {
 
 public extension Chain where T: UIView {
     
-    @available(iOS 13.0, *)
     @discardableResult
     func overrideUserInterfaceStyle(_ overrideUserInterfaceStyle: UIUserInterfaceStyle) -> Self {
         base.overrideUserInterfaceStyle = overrideUserInterfaceStyle
@@ -525,14 +520,12 @@ public extension Chain where T: UIView {
 
 public extension Chain where T: UIView {
     
-    @available(iOS 15.0, *)
     @discardableResult
     func minimumContentSizeCategory(minimumContentSizeCategory: UIContentSizeCategory?) -> Self {
         base.minimumContentSizeCategory = minimumContentSizeCategory
         return self
     }
     
-    @available(iOS 15.0, *)
     @discardableResult
     func maximumContentSizeCategory(maximumContentSizeCategory: UIContentSizeCategory?) -> Self {
         base.maximumContentSizeCategory = maximumContentSizeCategory
@@ -665,7 +658,6 @@ public extension Chain where T: UIView {
         return self
     }
     
-    @available(iOS 13.0, *)
     @discardableResult
     func layoutMargins(_ insets: EdgeInsets) -> Self {
         switch base.effectiveUserInterfaceLayoutDirection {

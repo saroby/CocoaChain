@@ -32,7 +32,6 @@ public extension Chain where T: UIButton {
         return self
     }
     
-    @available(iOS 15.0, *)
     @discardableResult
     func setNeedsUpdateConfiguration() -> Self {
         base.setNeedsUpdateConfiguration()
