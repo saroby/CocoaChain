@@ -15,19 +15,22 @@ public extension Chain where T: UIButton {
     }
     
     @discardableResult
-    func setTitle(
-        _ title: String?,
-        for: UIControl.State
-    ) -> Self {
+    func setTitle(_ title: String?, for: UIControl.State) -> Self {
         base.setTitle(title, for: `for`)
         return self
     }
     
     @discardableResult
-    func setAttributedTitle(
-        _ title: NSAttributedString?,
-        for: UIControl.State
+    func setPreferredSymbolConfiguration(
+        _ configuration: UIImage.SymbolConfiguration?,
+        forImageIn state: UIControl.State
     ) -> Self {
+        base.setPreferredSymbolConfiguration(configuration, forImageIn: state)
+        return self
+    }
+    
+    @discardableResult
+    func setAttributedTitle(_ title: NSAttributedString?, for: UIControl.State) -> Self {
         base.setAttributedTitle(title, for: `for`)
         return self
     }
@@ -38,6 +41,39 @@ public extension Chain where T: UIButton {
         return self
     }
     
+    func updateConfiguration() -> Self {
+        base.updateConfiguration()
+        return self
+    }
+    
+    func configurationUpdateHandler(_ configurationUpdateHandler: UIButton.ConfigurationUpdateHandler?) -> Self {
+        base.configurationUpdateHandler = configurationUpdateHandler
+        return self
+    }
+    
+    func automaticallyUpdatesConfiguration(_ automaticallyUpdatesConfiguration: Bool) -> Self {
+        base.automaticallyUpdatesConfiguration = automaticallyUpdatesConfiguration
+        return self
+    }
+    
+    @discardableResult
+    func tintColor(_ tintColor:UIColor?) -> Self {
+        base.tintColor = tintColor
+        return self
+    }
+    
+    @discardableResult
+    func role(_ role: UIButton.Role) -> Self {
+        base.role = role
+        return self
+    }
+    
+    @discardableResult
+    func isPointerInteractionEnabled(_ isPointerInteractionEnabled: Bool) -> Self {
+        base.isPointerInteractionEnabled = isPointerInteractionEnabled
+        return self
+    }
+    
     @discardableResult
     func removeFromSuperview() -> Self {
         base.removeFromSuperview()
@@ -45,38 +81,14 @@ public extension Chain where T: UIButton {
     }
     
     @discardableResult
-    func addTarget(
-        _ target: Any?,
-        action: Selector,
-        for: UIControl.Event
-    ) -> Self {
+    func addTarget(_ target: Any?, action: Selector, for: UIControl.Event) -> Self {
         base.addTarget(target, action: action, for: `for`)
         return self
     }
     
-    /// default is UIEdgeInsetsZero. On tvOS 10 or later, default is nonzero except for
-    @available(iOS, introduced: 2.0, deprecated: 15.0, message: "This property is ignored when using UIButtonConfiguration")
     @discardableResult
-    func contentEdgeInsets(
-        _ contentEdgeInsets: UIEdgeInsets
-    ) -> Self {
-        base.contentEdgeInsets = contentEdgeInsets
-        return self
-    }
-    
-    /// default is UIEdgeInsetsZero
-    @available(iOS, introduced: 2.0, deprecated: 15.0, message: "This property is ignored when using UIButtonConfiguration")
-    @discardableResult
-    func titleEdgeInsets(_ titleEdgeInsets: UIEdgeInsets) -> Self {
-        base.titleEdgeInsets = titleEdgeInsets
-        return self
-    }
-    
-    /// default is UIEdgeInsetsZero
-    @available(iOS, introduced: 2.0, deprecated: 15.0, message: "This property is ignored when using UIButtonConfiguration")
-    @discardableResult
-    func imageEdgeInsets(_ imageEdgeInsets: UIEdgeInsets) -> Self {
-        base.imageEdgeInsets = imageEdgeInsets
+    func configuration(_ configuration: UIButton.Configuration) -> Self {
+        base.configuration = configuration
         return self
     }
     
@@ -105,10 +117,7 @@ public extension Chain where T: UIButton {
 public extension Chain where T: UIButton {
     
     @discardableResult
-    func setBackgroundColor(
-        _ color: UIColor,
-        for state: UIControl.State
-    ) -> Self {
+    func setBackgroundColor(_ color: UIColor, for state: UIControl.State) -> Self {
         let createUIImage = { (color: CGColor) -> UIImage? in
             UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
             guard let context = UIGraphicsGetCurrentContext() else { return nil }
