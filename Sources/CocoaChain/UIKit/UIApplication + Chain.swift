@@ -1,7 +1,7 @@
 import UIKit
 
 public extension Chain where T: UIApplication {
-        
+    
     @discardableResult
     func delegate(_ delegate: UIApplicationDelegate) -> Self {
         base.delegate = delegate
