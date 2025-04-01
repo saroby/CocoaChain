@@ -80,6 +80,32 @@ public extension Chain where T: UIButton {
         return self
     }
     
+    /// default is UIEdgeInsetsZero. On tvOS 10 or later, default is nonzero except for
+    @available(iOS, introduced: 2.0, deprecated: 15.0, message: "This property is ignored when using UIButtonConfiguration")
+    @discardableResult
+    func contentEdgeInsets(
+        _ contentEdgeInsets: UIEdgeInsets
+    ) -> Self {
+        base.contentEdgeInsets = contentEdgeInsets
+        return self
+    }
+    
+    /// default is UIEdgeInsetsZero
+    @available(iOS, introduced: 2.0, deprecated: 15.0, message: "This property is ignored when using UIButtonConfiguration")
+    @discardableResult
+    func titleEdgeInsets(_ titleEdgeInsets: UIEdgeInsets) -> Self {
+        base.titleEdgeInsets = titleEdgeInsets
+        return self
+    }
+    
+    /// default is UIEdgeInsetsZero
+    @available(iOS, introduced: 2.0, deprecated: 15.0, message: "This property is ignored when using UIButtonConfiguration")
+    @discardableResult
+    func imageEdgeInsets(_ imageEdgeInsets: UIEdgeInsets) -> Self {
+        base.imageEdgeInsets = imageEdgeInsets
+        return self
+    }
+    
     @discardableResult
     func addTarget(_ target: Any?, action: Selector, for: UIControl.Event) -> Self {
         base.addTarget(target, action: action, for: `for`)
