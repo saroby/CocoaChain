@@ -62,4 +62,9 @@ public extension Chain where T: UIStackView {
         return self
     }
     
+    @discardableResult
+    func layoutMargins(_ layoutMargins: UIEdgeInsets) -> Self {
+        base.layoutMargins = layoutMargins
+        return self
+    }
 }
