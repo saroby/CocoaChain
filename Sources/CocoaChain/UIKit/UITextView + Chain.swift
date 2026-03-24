@@ -78,6 +78,7 @@ public extension Chain where T: UITextView {
         return self
     }
     
+    @discardableResult
     func scrollRangeToVisible(_ range: NSRange) -> Self {
         base.scrollRangeToVisible(range)
         return self

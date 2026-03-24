@@ -146,6 +146,7 @@ public extension Chain where T: UIScrollView {
         return self
     }
     
+    @discardableResult
     func delaysContentTouches(_ delaysContentTouches: Bool) -> Self {
         base.delaysContentTouches = delaysContentTouches
         return self

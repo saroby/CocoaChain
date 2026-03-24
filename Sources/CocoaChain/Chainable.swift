@@ -1,8 +1,8 @@
 import Foundation
 
-public protocol Chainable {
+public protocol Chainable: AnyObject {
     associatedtype T
-    
+
     var chain: Chain<T> { get }
 }
 

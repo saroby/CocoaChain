@@ -27,6 +27,7 @@ public extension Chain where T: UIView {
         return self
     }
     
+    @discardableResult
     func focusEffect(_ focusEffect: UIFocusEffect?) -> Self {
         base.focusEffect = focusEffect
         return self

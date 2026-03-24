@@ -56,6 +56,7 @@ public extension Chain where T: UILabel {
     }
     
     /// default is NO
+    @discardableResult
     func allowsDefaultTighteningForTruncation(_ allowsDefaultTighteningForTruncation: Bool) -> Self {
         base.allowsDefaultTighteningForTruncation = allowsDefaultTighteningForTruncation
         return self
@@ -79,12 +80,6 @@ public extension Chain where T: UILabel {
     @discardableResult
     func textAlignment(_ textAlignment: NSTextAlignment) -> Self {
         base.textAlignment = textAlignment
-        return self
-    }
-    
-    @discardableResult
-    func sizeToFit() -> Self {
-        base.sizeToFit()
         return self
     }
     

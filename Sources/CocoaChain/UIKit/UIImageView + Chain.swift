@@ -23,6 +23,7 @@ public extension Chain where T: UIImageView {
     }
     
     /// default is NO
+    @discardableResult
     func isUserInteractionEnabled(_ isUserInteractionEnabled: Bool) -> Self {
         base.isUserInteractionEnabled = isUserInteractionEnabled
         return self
@@ -60,13 +61,6 @@ public extension Chain where T: UIImageView {
     @discardableResult
     func animationRepeatCount(_ animationRepeatCount: Int) -> Self {
         base.animationRepeatCount = animationRepeatCount
-        return self
-    }
-    
-    /// When tintColor is non-nil, any template images set on the image view will be colorized with that color.
-    /// The tintColor is inherited through the superview hierarchy. See UIView for more information.
-    func tintColor(_ tintColor: UIColor?) -> Self {
-        base.tintColor = tintColor
         return self
     }
     

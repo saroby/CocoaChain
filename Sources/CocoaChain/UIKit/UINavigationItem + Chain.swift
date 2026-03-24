@@ -100,6 +100,7 @@ public extension Chain where T: UINavigationItem {
      would like the left items to appear in addition to the back button (as opposed to instead of it)
      set leftItemsSupplementBackButton to YES.
      */
+    @discardableResult
     func leftItemsSupplementBackButton(_ leftItemsSupplementBackButton: Bool) -> Self {
         base.leftItemsSupplementBackButton = leftItemsSupplementBackButton
         return self

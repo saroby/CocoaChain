@@ -32,6 +32,7 @@ public extension Chain where T: MKMapView {
     
     /// Region is the coordinate and span of the map.
     /// Region may be modified to fit the aspect ratio of the view using regionThatFits:.
+    @discardableResult
     func region(_ region: MKCoordinateRegion) -> Self {
         base.region = region
         return self
@@ -100,6 +101,7 @@ public extension Chain where T: MKMapView {
         return self
     }
     
+    @discardableResult
     func cameraBoundary(_ cameraBoundary: MKMapView.CameraBoundary?) -> Self {
         base.cameraBoundary = cameraBoundary
         return self
@@ -173,6 +175,7 @@ public extension Chain where T: MKMapView {
         return self
     }
     
+    @discardableResult
     func userTrackingMode(_ userTrackingMode: MKUserTrackingMode) -> Self {
         base.userTrackingMode = userTrackingMode
         return self

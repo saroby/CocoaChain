@@ -20,6 +20,7 @@ public extension Chain where T: UIView {
         return self
     }
     
+    @discardableResult
     func layer(maskedCorners: CACornerMask) -> Self {
         base.layer.maskedCorners = maskedCorners
         return self

@@ -16,5 +16,19 @@ public struct Chain<T> {
         try block(base)
         return self
     }
-    
+
+}
+
+// MARK: - KeyPath-based API
+
+public extension Chain where T: AnyObject {
+
+    /// Set any writable property via KeyPath.
+    /// Works for all reference types (NSObject subclasses).
+    @discardableResult
+    func set<V>(_ keyPath: ReferenceWritableKeyPath<T, V>, _ value: V) -> Self {
+        base[keyPath: keyPath] = value
+        return self
+    }
+
 }
