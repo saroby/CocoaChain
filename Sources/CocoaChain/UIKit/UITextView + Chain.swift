@@ -126,5 +126,35 @@ public extension Chain where T: UITextView {
         base.usesStandardTextScaling = usesStandardTextScaling
         return self
     }
-    
+
+    @discardableResult
+    func keyboardType(_ keyboardType: UIKeyboardType) -> Self {
+        base.keyboardType = keyboardType
+        return self
+    }
+
+    @discardableResult
+    func returnKeyType(_ returnKeyType: UIReturnKeyType) -> Self {
+        base.returnKeyType = returnKeyType
+        return self
+    }
+
+    @discardableResult
+    func autocorrectionType(_ autocorrectionType: UITextAutocorrectionType) -> Self {
+        base.autocorrectionType = autocorrectionType
+        return self
+    }
+
+    @discardableResult
+    func autocapitalizationType(_ autocapitalizationType: UITextAutocapitalizationType) -> Self {
+        base.autocapitalizationType = autocapitalizationType
+        return self
+    }
+
+    @discardableResult
+    func isScrollEnabled(_ isScrollEnabled: Bool) -> Self {
+        base.isScrollEnabled = isScrollEnabled
+        return self
+    }
+
 }

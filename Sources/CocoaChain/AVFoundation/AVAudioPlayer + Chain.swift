@@ -56,4 +56,22 @@ public extension Chain where T: AVAudioPlayer {
         return self
     }
 
+    @discardableResult
+    func pause() -> Self {
+        base.pause()
+        return self
+    }
+
+    @discardableResult
+    func isMeteringEnabled(_ isMeteringEnabled: Bool) -> Self {
+        base.isMeteringEnabled = isMeteringEnabled
+        return self
+    }
+
+    @discardableResult
+    func pan(_ pan: Float) -> Self {
+        base.pan = pan
+        return self
+    }
+
 }

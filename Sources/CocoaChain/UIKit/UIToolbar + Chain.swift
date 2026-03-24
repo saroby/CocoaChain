@@ -38,4 +38,23 @@ public extension Chain where T: UIToolbar {
         return self
     }
 
+    @discardableResult
+    func standardAppearance(_ standardAppearance: UIToolbarAppearance) -> Self {
+        base.standardAppearance = standardAppearance
+        return self
+    }
+
+    @discardableResult
+    func compactAppearance(_ compactAppearance: UIToolbarAppearance?) -> Self {
+        base.compactAppearance = compactAppearance
+        return self
+    }
+
+    @available(iOS 15.0, *)
+    @discardableResult
+    func scrollEdgeAppearance(_ scrollEdgeAppearance: UIToolbarAppearance?) -> Self {
+        base.scrollEdgeAppearance = scrollEdgeAppearance
+        return self
+    }
+
 }

@@ -56,4 +56,16 @@ public extension Chain where T: UIDatePicker {
         return self
     }
 
+    @discardableResult
+    func countDownDuration(_ countDownDuration: TimeInterval) -> Self {
+        base.countDownDuration = countDownDuration
+        return self
+    }
+
+    @discardableResult
+    func minuteInterval(_ minuteInterval: Int) -> Self {
+        base.minuteInterval = minuteInterval
+        return self
+    }
+
 }

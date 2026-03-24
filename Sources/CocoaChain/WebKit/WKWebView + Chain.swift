@@ -69,4 +69,16 @@ public extension Chain where T: WKWebView {
         return self
     }
 
+    @discardableResult
+    func loadFileURL(_ URL: URL, allowingReadAccessTo readAccessURL: URL) -> Self {
+        base.loadFileURL(URL, allowingReadAccessTo: readAccessURL)
+        return self
+    }
+
+    @discardableResult
+    func load(_ data: Data, mimeType MIMEType: String, characterEncodingName: String, baseURL: URL) -> Self {
+        base.load(data, mimeType: MIMEType, characterEncodingName: characterEncodingName, baseURL: baseURL)
+        return self
+    }
+
 }

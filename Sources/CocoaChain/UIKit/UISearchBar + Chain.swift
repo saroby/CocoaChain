@@ -56,4 +56,34 @@ public extension Chain where T: UISearchBar {
         return self
     }
 
+    @discardableResult
+    func barTintColor(_ barTintColor: UIColor?) -> Self {
+        base.barTintColor = barTintColor
+        return self
+    }
+
+    @discardableResult
+    func isTranslucent(_ isTranslucent: Bool) -> Self {
+        base.isTranslucent = isTranslucent
+        return self
+    }
+
+    @discardableResult
+    func showsBookmarkButton(_ showsBookmarkButton: Bool) -> Self {
+        base.showsBookmarkButton = showsBookmarkButton
+        return self
+    }
+
+    @discardableResult
+    func showsSearchResultsButton(_ showsSearchResultsButton: Bool) -> Self {
+        base.showsSearchResultsButton = showsSearchResultsButton
+        return self
+    }
+
+    @discardableResult
+    func prompt(_ prompt: String?) -> Self {
+        base.prompt = prompt
+        return self
+    }
+
 }
