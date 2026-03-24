@@ -43,5 +43,47 @@ public extension Chain where T: CLLocationManager {
         base.showsBackgroundLocationIndicator = showsBackgroundLocationIndicator
         return self
     }
-    
+
+    @discardableResult
+    func requestWhenInUseAuthorization() -> Self {
+        base.requestWhenInUseAuthorization()
+        return self
+    }
+
+    @discardableResult
+    func requestAlwaysAuthorization() -> Self {
+        base.requestAlwaysAuthorization()
+        return self
+    }
+
+    @discardableResult
+    func startUpdatingLocation() -> Self {
+        base.startUpdatingLocation()
+        return self
+    }
+
+    @discardableResult
+    func stopUpdatingLocation() -> Self {
+        base.stopUpdatingLocation()
+        return self
+    }
+
+    @discardableResult
+    func requestLocation() -> Self {
+        base.requestLocation()
+        return self
+    }
+
+    @discardableResult
+    func startMonitoring(for region: CLRegion) -> Self {
+        base.startMonitoring(for: region)
+        return self
+    }
+
+    @discardableResult
+    func stopMonitoring(for region: CLRegion) -> Self {
+        base.stopMonitoring(for: region)
+        return self
+    }
+
 }

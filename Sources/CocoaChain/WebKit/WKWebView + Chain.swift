@@ -81,4 +81,10 @@ public extension Chain where T: WKWebView {
         return self
     }
 
+    @discardableResult
+    func evaluateJavaScript(_ javaScriptString: String, completionHandler: ((Any?, Error?) -> Void)? = nil) -> Self {
+        base.evaluateJavaScript(javaScriptString, completionHandler: completionHandler)
+        return self
+    }
+
 }

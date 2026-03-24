@@ -245,5 +245,35 @@ public extension Chain where T: MKMapView {
         base.showAnnotations(annotations, animated: animated)
         return self
     }
-    
+
+    @discardableResult
+    func addOverlay(_ overlay: MKOverlay) -> Self {
+        base.addOverlay(overlay)
+        return self
+    }
+
+    @discardableResult
+    func addOverlays(_ overlays: [MKOverlay]) -> Self {
+        base.addOverlays(overlays)
+        return self
+    }
+
+    @discardableResult
+    func addOverlay(_ overlay: MKOverlay, level: MKOverlayLevel) -> Self {
+        base.addOverlay(overlay, level: level)
+        return self
+    }
+
+    @discardableResult
+    func removeOverlay(_ overlay: MKOverlay) -> Self {
+        base.removeOverlay(overlay)
+        return self
+    }
+
+    @discardableResult
+    func removeOverlays(_ overlays: [MKOverlay]) -> Self {
+        base.removeOverlays(overlays)
+        return self
+    }
+
 }

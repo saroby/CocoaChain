@@ -115,6 +115,12 @@ public extension Chain where T: UIButton {
         return self
     }
 
+    @discardableResult
+    func setBackgroundImage(_ image: UIImage?, for state: UIControl.State) -> Self {
+        base.setBackgroundImage(image, for: state)
+        return self
+    }
+
 }
 
 // MARK: - Utility

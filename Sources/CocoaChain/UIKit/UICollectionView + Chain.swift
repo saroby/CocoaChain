@@ -171,4 +171,22 @@ public extension Chain where T: UICollectionView {
         return self
     }
 
+    @discardableResult
+    func performBatchUpdates(_ updates: (() -> Void)?, completion: ((Bool) -> Void)? = nil) -> Self {
+        base.performBatchUpdates(updates, completion: completion)
+        return self
+    }
+
+    @discardableResult
+    func scrollToItem(at indexPath: IndexPath, at scrollPosition: UICollectionView.ScrollPosition, animated: Bool) -> Self {
+        base.scrollToItem(at: indexPath, at: scrollPosition, animated: animated)
+        return self
+    }
+
+    @discardableResult
+    func prefetchDataSource(_ prefetchDataSource: UICollectionViewDataSourcePrefetching?) -> Self {
+        base.prefetchDataSource = prefetchDataSource
+        return self
+    }
+
 }

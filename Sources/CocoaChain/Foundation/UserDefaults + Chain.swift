@@ -50,5 +50,23 @@ public extension Chain where T: UserDefaults {
         base.removeSuite(named: named)
         return self
     }
-    
+
+    @discardableResult
+    func addSuite(named suiteName: String) -> Self {
+        base.addSuite(named: suiteName)
+        return self
+    }
+
+    @discardableResult
+    func register(defaults registrationDictionary: [String : Any]) -> Self {
+        base.register(defaults: registrationDictionary)
+        return self
+    }
+
+    @discardableResult
+    func set(_ url: URL?, forKey defaultName: String) -> Self {
+        base.set(url, forKey: defaultName)
+        return self
+    }
+
 }

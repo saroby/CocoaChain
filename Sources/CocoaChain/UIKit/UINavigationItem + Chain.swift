@@ -84,7 +84,7 @@ public extension Chain where T: UINavigationItem {
     
     @discardableResult
     func setLeftBarButtonItems(_ items: [UIBarButtonItem]?, animated: Bool) -> Self {
-        
+        base.setLeftBarButtonItems(items, animated: animated)
         return self
     }
     
@@ -170,5 +170,12 @@ public extension Chain where T: UINavigationItem {
         base.compactAppearance = compactAppearance
         return self
     }
-    
+
+    ///  When set and this item is topmost, overrides the hosting navigation bar's scrollEdgeAppearance. See UINavigationBar.scrollEdgeAppearance for further details.
+    @discardableResult
+    func scrollEdgeAppearance(_ scrollEdgeAppearance: UINavigationBarAppearance?) -> Self {
+        base.scrollEdgeAppearance = scrollEdgeAppearance
+        return self
+    }
+
 }
